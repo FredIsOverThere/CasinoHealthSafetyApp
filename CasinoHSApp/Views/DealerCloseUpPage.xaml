@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:CasinoHSApp.ViewModels" 
+             xmlns:model="clr-namespace:CasinoHSApp.Models" 
+             xmlns:local="clr-namespace:CasinoHSApp.Helpers"
+             x:DataType="viewmodels:SkillsViewModel"
+             x:Class="CasinoHSApp.Views.DealerCloseUpPage"
+             			BackgroundColor="{AppThemeBinding 
+                        Dark={StaticResource WindowBackgroundColorDark}, 
+                        Light={StaticResource WindowBackgroundColor}}"
+          >
+    <ContentPage.BindingContext>
+        <viewmodels:SkillsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="BATemplate"
+                          x:DataType="model:DealerCloseUp" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding GameType}" 
+                                   x:DataType="model:DealerCloseUp"
+                               Style="{DynamicResource LabelSubTitle}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Last Assessment:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding GameLastAssessed}"
+                                   x:DataType="model:DealerCloseUp"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="View Last Assessment"
+			       Clicked="Last_Baccarat_Clicked" 
+                               Style="{StaticResource ButtonOutlineAssessment}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="New Assessment"
+			       Clicked="Baccarat_Clicked"  
+                               Style="{StaticResource ButtonOutlineAssessment}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+            <DataTemplate x:Key="BJTemplate"
+                          x:DataType="model:DealerCloseUp" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding GameType}" 
+                                   x:DataType="model:DealerCloseUp"
+                               Style="{DynamicResource LabelSubTitle}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Last Assessment:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding GameLastAssessed}"
+                                   x:DataType="model:DealerCloseUp"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="View Last Assessment"
+			       Clicked="Last_BlackJack_Clicked" 
+                               Style="{StaticResource ButtonOutlineAssessment}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="New Assessment"
+			       Clicked="BlackJack_Clicked"  
+                               Style="{StaticResource ButtonOutlineAssessment}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+            <DataTemplate x:Key="ARTemplate"
+                          x:DataType="model:DealerCloseUp" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding GameType}" 
+                                   x:DataType="model:DealerCloseUp"
+                               Style="{DynamicResource LabelSubTitle}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Last Assessment:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding GameLastAssessed}"
+                                   x:Name="LastAssessed"
+                                   x:DataType="model:DealerCloseUp"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="View Last Assessment"
+			       Clicked="Last_Roulette_Clicked" 
+                               Style="{StaticResource ButtonOutlineAssessment}">
+                                <!--<Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding =""
+                                </Button.Triggers>-->
+                            </Button>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="New Assessment"
+			       Clicked="Roulette_Clicked"  
+                               Style="{StaticResource ButtonOutlineAssessment}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+            <DataTemplate x:Key="PKTemplate"
+                          x:DataType="model:DealerCloseUp" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding GameType}"
+                                   x:DataType="model:DealerCloseUp"
+                               Style="{DynamicResource LabelSubTitle}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Last Assessment:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding GameLastAssessed}"
+                                   x:DataType="model:DealerCloseUp"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="View Last Assessment"
+			       Clicked="Last_Poker_Clicked" 
+                               Style="{StaticResource ButtonOutlineAssessment}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="New Assessment"
+			       Clicked="Poker_Clicked" 
+                               Style="{StaticResource ButtonOutlineAssessment}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="BANATemplate"
+                          x:DataType="model:DealerCloseUp" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding GameType}" 
+                                   x:DataType="model:DealerCloseUp"
+                               Style="{DynamicResource LabelSubTitle}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Last Assessment:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding GameLastAssessed}"
+                                   x:DataType="model:DealerCloseUp"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="New Assessment"
+			       Clicked="Baccarat_Clicked"  
+                               Style="{StaticResource ButtonOutlineAssessment}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+            <DataTemplate x:Key="BJNATemplate"
+                          x:DataType="model:DealerCloseUp" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding GameType}" 
+                                   x:DataType="model:DealerCloseUp"
+                               Style="{DynamicResource LabelSubTitle}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Last Assessment:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding GameLastAssessed}"
+                                   x:DataType="model:DealerCloseUp"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="New Assessment"
+			       Clicked="BlackJack_Clicked"  
+                               Style="{StaticResource ButtonOutlineAssessment}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+            <DataTemplate x:Key="ARNATemplate"
+                          x:DataType="model:DealerCloseUp" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding GameType}" 
+                                   x:DataType="model:DealerCloseUp"
+                               Style="{DynamicResource LabelSubTitle}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Last Assessment:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding GameLastAssessed}"
+                                   x:Name="LastAssessed"
+                                   x:DataType="model:DealerCloseUp"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="New Assessment"
+			       Clicked="Roulette_Clicked"  
+                               Style="{StaticResource ButtonOutlineAssessment}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+            <DataTemplate x:Key="PKNATemplate"
+                          x:DataType="model:DealerCloseUp" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding GameType}"
+                                   x:DataType="model:DealerCloseUp"
+                               Style="{DynamicResource LabelSubTitle}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Last Assessment:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding GameLastAssessed}"
+                                   x:DataType="model:DealerCloseUp"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="New Assessment"
+			       Clicked="Poker_Clicked" 
+                               Style="{StaticResource ButtonOutlineAssessment}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+            <DataTemplate x:Key="NullTemplate">
+                <StackLayout>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="PersonalTemplate">
+                <StackLayout>
+                    <Label Text="Casino Health and Safety Application"
+                           HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+                   Style="{StaticResource LabelTitle}" />
+                    <Frame Style="{StaticResource DealerCard}" BackgroundColor="DarkBlue">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Name:" TextColor="White"
+                               Style="{DynamicResource LabelSmall}" />
+                                <Label Text="{Binding FirstName}" TextColor="White"
+                                   x:DataType="model:DealerCloseUp"
+                              Style="{DynamicResource LabelSmall}" />
+                                <Label Text="{Binding LastName}" TextColor="White"
+                                   x:DataType="model:DealerCloseUp"
+                              Style="{DynamicResource LabelSmall}" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="ID:" 
+                               Style="{DynamicResource LabelSmall}" TextColor="White" />
+                                <Label Text="{Binding StaffID}" TextColor="White"
+                                        x:DataType="model:DealerCloseUp"
+                              Style="{DynamicResource LabelSmall}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+            </DataTemplate>
+
+            <local:DealerCloseUpTemplateSelector x:Key="GameTemplateSelector"
+                 PKTemplate="{StaticResource PKTemplate}"
+                 BJTemplate="{StaticResource BJTemplate}"
+                 BATemplate="{StaticResource BATemplate}"
+                 ARTemplate="{StaticResource ARTemplate}"
+                 PKNATemplate="{StaticResource PKNATemplate}"
+                 BJNATemplate="{StaticResource BJNATemplate}"
+                 BANATemplate="{StaticResource BANATemplate}"
+                 ARNATemplate="{StaticResource ARNATemplate}"
+                 NullTemplate="{StaticResource NullTemplate}"
+                 PersonalTemplate="{StaticResource PersonalTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <CollectionView ItemTemplate="{StaticResource GameTemplateSelector}"
+                  ItemsSource="{Binding DealerSkills}" SelectionMode="None"
+                  x:Name="listView">
+        
+        <CollectionView.Footer>
+
+            <StackLayout Orientation="Horizontal">
+                    <Button Text="Refresh" Clicked="Refresh_Clicked"/>
+                    <Button Text="Return" Clicked="Back_Clicked"/>
+
+            </StackLayout>
+            
+        </CollectionView.Footer>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

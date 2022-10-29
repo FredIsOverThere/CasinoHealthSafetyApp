@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CasinoHSApp.Views.PitSelectPage">
+    <ContentPage.Content>
+        <Grid RowDefinitions="50,Auto,Auto,Auto,Auto,Auto,Auto">
+
+            <Label Text="Casino Health and Safety Application Pit Selection" FontSize="Title" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="10" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Please Select which pits you are working in!"
+                   Grid.Row="1" Grid.Column="2"
+                HorizontalOptions="Center" Grid.ColumnSpan="10"  VerticalOptions="Center"/>
+            
+            <Label Text="All Pits" Grid.Row="2" Grid.Column="6" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="2" Grid.Column="7" HorizontalOptions="Center" VerticalOptions="Center" />
+            <!--
+            <Label Text="All Pits" Grid.Row="2" Grid.Column="2" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="2" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Vip" Grid.Row="2" Grid.Column="4" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="2" Grid.Column="5" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Premium" Grid.Row="2" Grid.Column="6" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="2" Grid.Column="7" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="East" Grid.Row="2" Grid.Column="8" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="2" Grid.Column="9" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Text="West" Grid.Row="2" Grid.Column="10" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="2" Grid.Column="11" HorizontalOptions="Center" VerticalOptions="Center"/>
+            -->
+
+            <Label x:Name="West1" Text="All West" Grid.Row="3" Grid.Column="0" HorizontalOptions="Start" />
+            <CheckBox x:Name="CheckWest1" Grid.Row="3" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label x:Name="West2" Text="Pit 02" Grid.Row="3" Grid.Column="2" HorizontalOptions="Start" />
+            <CheckBox x:Name="CheckWest2" Grid.Row="3" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label x:Name="West3" Text="Pit 04" Grid.Row="3" Grid.Column="4" HorizontalOptions="Start" />
+            <CheckBox x:Name="CheckWest3" Grid.Row="3" Grid.Column="5" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label x:Name="West4" Text="Pit 15" Grid.Row="3" Grid.Column="6" HorizontalOptions="Start" />
+            <CheckBox x:Name="CheckWest4" Grid.Row="3" Grid.Column="7" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label x:Name="West5" Text="Pit 22" Grid.Row="3" Grid.Column="8" HorizontalOptions="Start" />
+            <CheckBox x:Name="CheckWest5" Grid.Row="3" Grid.Column="9" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label x:Name="West6" Text="Pit 31" Grid.Row="3" Grid.Column="10" HorizontalOptions="Start" />
+            <CheckBox x:Name="CheckWest6" Grid.Row="3" Grid.Column="11" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label x:Name="West7" Text="Pit 33" Grid.Row="3" Grid.Column="12" HorizontalOptions="Start" />
+            <CheckBox x:Name="CheckWest7" Grid.Row="3" Grid.Column="13" HorizontalOptions="Center" VerticalOptions="Center" />
+<!--
+            <Label Text="All East" Grid.Row="4" Grid.Column="0" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="4" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 06" Grid.Row="4" Grid.Column="2" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="4" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 07" Grid.Row="4" Grid.Column="4" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="4" Grid.Column="5" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 09" Grid.Row="4" Grid.Column="6" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="4" Grid.Column="7" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="Pit 10" Grid.Row="4" Grid.Column="8" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="4" Grid.Column="9" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 11" Grid.Row="4" Grid.Column="10" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="4" Grid.Column="11" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 12" Grid.Row="4" Grid.Column="12" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="4" Grid.Column="13" HorizontalOptions="Center" VerticalOptions="Center" />
+
+            <Label Text="All Premium" Grid.Row="5" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center" />
+            <CheckBox Grid.Row="5" Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 08" Grid.Row="5" Grid.Column="5" HorizontalOptions="Start" VerticalOptions="Center" />
+            <CheckBox Grid.Row="5" Grid.Column="6" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 16" Grid.Row="5" Grid.Column="7" HorizontalOptions="Start" VerticalOptions="Center" />
+            <CheckBox Grid.Row="5" Grid.Column="8" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 17" Grid.Row="5" Grid.Column="9" HorizontalOptions="Start"  VerticalOptions="Center"/>
+            <CheckBox Grid.Row="5" Grid.Column="10" HorizontalOptions="Center" VerticalOptions="Center" />
+
+
+            <Label Text="All Vip" Grid.Row="6" Grid.Column="1" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="6" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 23" Grid.Row="6" Grid.Column="3" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="6" Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 25" Grid.Row="6" Grid.Column="5" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="6" Grid.Column="6" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 26" Grid.Row="6" Grid.Column="7" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="6" Grid.Column="8" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="Pit 28" Grid.Row="6" Grid.Column="9" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="6" Grid.Column="10" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Text="Pit 29" Grid.Row="6" Grid.Column="11" HorizontalOptions="Start" />
+            <CheckBox Grid.Row="6" Grid.Column="12" HorizontalOptions="Center" VerticalOptions="Center" />
+            -->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

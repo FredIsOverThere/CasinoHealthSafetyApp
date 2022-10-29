@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CasinoHSApp.Views.DealerSearchResultPage"
+             xmlns:viewmodels="clr-namespace:CasinoHSApp.ViewModels" 
+             xmlns:model="clr-namespace:CasinoHSApp.Models"
+                 xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:DataType="viewmodels:DealerDisplayViewModel"
+             			BackgroundColor="{AppThemeBinding 
+                        Dark={StaticResource WindowBackgroundColorDark}, 
+                        Light={StaticResource WindowBackgroundColor}}">
+    
+    <ContentPage.BindingContext>
+        <viewmodels:DealerDisplayViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--<xct:ItemSelectedEventArgsConverter x:Key="ItemSelectedEventArgsConverter" />-->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <CollectionView BackgroundColor="Transparent"
+              x:Name="CollectionViewDealerSearchResults"
+              ItemsSource="{Binding Dealer}"
+            ItemSizingStrategy="MeasureAllItems"
+            SelectionChanged="OnCollectionViewSelectionChanged"        
+            SelectionMode="Single">
+        <!--SelectedItem="{Binding SelectedDealer, Mode=TwoWay}"-->
+            <!--SelectionChangedCommand="{Binding SelectedCommand, Mode=TwoWay}"-->
+        <CollectionView.EmptyView>
+            <StackLayout Padding="12">
+                <Label HorizontalOptions="Center" Style="{StaticResource LabelSubTitle}" Text="Press Refresh for Dealer List" />
+            </StackLayout>
+        </CollectionView.EmptyView>
+        <!--Built in Cells-->
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:Dealer">
+                <Grid Padding="10">
+                    <Frame Style="{StaticResource DealerCard}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label 
+                                    Style="{StaticResource LabelLarge}"
+                                    Text="{Binding StaffID}" />
+                            <Label 
+                                    Style="{StaticResource LabelLarge}"
+                                    Text="{Binding FirstName}" />
+                            <Label 
+                                    Style="{StaticResource LabelLarge}"
+                                    Text="{Binding LastName}" />
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        <CollectionView.Footer>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Return" Clicked="Back_Clicked"
+                        Padding="20,0"
+                        VerticalOptions="EndAndExpand" HorizontalOptions="Center"
+                        Style="{StaticResource ButtonOutline}"/>
+                </StackLayout>
+            </StackLayout>
+                <!--<StackLayout Orientation="Horizontal">
+                    <Button Text="Return" Clicked="Back_Clicked"
+                        Padding="20,0"
+                        VerticalOptions="EndAndExpand" HorizontalOptions="Center"
+                        Style="{StaticResource ButtonOutline}"/>
+                </StackLayout>-->
+        </CollectionView.Footer>
+    </CollectionView>
+</ContentPage>

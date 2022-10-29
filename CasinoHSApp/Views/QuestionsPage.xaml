@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:CasinoHSApp.ViewModels"
+             xmlns:model="clr-namespace:CasinoHSApp.Models"
+             xmlns:local="clr-namespace:CasinoHSApp.Helpers"
+             x:Class="CasinoHSApp.Views.QuestionsPage"
+             			BackgroundColor="{AppThemeBinding 
+                        Dark={StaticResource WindowBackgroundColorDark}, 
+                        Light={StaticResource WindowBackgroundColor}}"
+             >
+    <ContentPage.BindingContext>
+        <viewmodels:QuestionsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="TextTemplate"
+                x:DataType="model:QuestionBuild" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <Label Text="{Binding Question}"
+                   FontAttributes="Bold" Style="{StaticResource LabelMicro}"
+                  HorizontalOptions="Start" />
+                        <Editor x:Name="{Binding Position}" BackgroundColor="LightGray" AutoSize="TextChanges" TextChanged="TextChangedEventHandler"/>
+                        <Label Text="{Binding Position}" IsVisible="False" x:DataType="model:QuestionBuild"/>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+            <DataTemplate x:Key="ButtonTemplate"
+                x:DataType="model:QuestionBuild" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="{Binding Question}"
+                   FontAttributes="Bold" Style="{StaticResource ButtonOutline}"
+                  HorizontalOptions="CenterAndExpand" Clicked="Submit_Clicked"/>
+                        <Button Text="Return"
+                   FontAttributes="Bold" Style="{StaticResource ButtonOutline}"
+                  HorizontalOptions="CenterAndExpand" Clicked="Return_Clicked"/>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+
+            <DataTemplate x:Key="PersonalTemplate">
+                <StackLayout>
+                    <Label Text="Casino Health and Safety Application"
+                           HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+                   Style="{StaticResource LabelTitle}" />
+
+                    <Frame Style="{StaticResource DealerCard}" BackgroundColor="DarkBlue">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Name:" TextColor="White"
+                               Style="{DynamicResource LabelSmall}" />
+                                <Label Text="{Binding FirstName}" TextColor="White"
+                                   x:DataType="model:QuestionBuild"
+                              Style="{DynamicResource LabelSmall}" />
+                                <Label Text="{Binding LastName}" TextColor="White"
+                                   x:DataType="model:QuestionBuild"
+                              Style="{DynamicResource LabelSmall}" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="ID:" TextColor="White"
+                               Style="{DynamicResource LabelSmall}" />
+                                <Label Text="{Binding StaffID}" TextColor="White"
+                                        x:DataType="model:QuestionBuild"
+                              Style="{DynamicResource LabelSmall}" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Game:" TextColor="White"
+                               Style="{DynamicResource LabelSmall}" />
+                                <Label Text="{Binding GameName}" TextColor="White"
+                                        x:DataType="model:QuestionBuild"
+                              Style="{DynamicResource LabelSmall}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="QuestionTemplate">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Question}"
+                                   x:DataType="model:QuestionBuild"
+                              Style="{DynamicResource LabelSmall}" />
+                    <Picker x:Name="{Binding Position}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" 
+                             x:DataType="model:QuestionBuild" SelectedIndexChanged="Picker_SelectedIndexChanged" MinimumWidthRequest="1000"
+                             Title="Yes/No" SelectedItem="{Binding Answer, Mode=TwoWay}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Yes</x:String>
+                                <x:String>No</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                        
+                    </Picker>
+                    <Label Text="{Binding Position}" IsVisible="False" x:DataType="model:QuestionBuild"/>
+                </StackLayout>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="NullTemplate">
+                <StackLayout>
+                </StackLayout>
+            </DataTemplate>
+
+            <DataTemplate x:Key="HeadingTemplate">
+                <StackLayout>
+                    <Frame Style="{StaticResource DealerCard}">
+                        <StackLayout>
+                            <Label Text="{Binding Question}"
+                                   FontAttributes="Bold"
+                                   x:DataType="model:QuestionBuild"
+                              Style="{DynamicResource LabelSubTitle}"  />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+
+            <local:QuestionTemplateSelector x:Key="QuestionTemplateSelector"
+                 QuestionTemplate="{StaticResource QuestionTemplate}"
+                 NullTemplate="{StaticResource NullTemplate}"
+                 TextTemplate="{StaticResource TextTemplate}"
+                 HeadingTemplate="{StaticResource HeadingTemplate}"
+                 ButtonTemplate="{StaticResource ButtonTemplate}"                    
+                 PersonalTemplate="{StaticResource PersonalTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <CollectionView x:Name="CollectionView" ItemTemplate="{StaticResource QuestionTemplateSelector}"
+                        SelectionMode="None">
+
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

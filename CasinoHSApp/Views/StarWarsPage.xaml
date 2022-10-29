@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:CasinoHSApp.WebService.Helpers"
+             xmlns:name="clr-namespace:CasinoHSApp.WebService.ViewModels" xmlns:model="clr-namespace:CasinoHSApp.WebService.Models"
+             x:Class="CasinoHSApp.Views.StarWarsPage"
+             BackgroundColor="{AppThemeBinding 
+                        Dark={StaticResource WindowBackgroundColorDark}, 
+                        Light={StaticResource WindowBackgroundColor}}"
+             >
+    
+    <ContentPage.BindingContext>
+        <name:StarWarsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="VehicleTemplate"
+                          x:DataType="model:Generic">
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic1}"
+                                   x:DataType="model:Generic"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Model:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic2}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Class of Vehicle:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic3}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Cost in credits:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic4}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Crew Compliment:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic5}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+
+            <DataTemplate x:Key="PlanetTemplate"
+                          x:DataType="model:Generic" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic1}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Population:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic2}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Planet Diameter:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic3}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Planet Rotational Period:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic4}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Planet Orbital Period:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic5}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+
+            <DataTemplate x:Key="PeopleTemplate"
+                          x:DataType="model:Generic" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic1}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Year of Birth:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic2}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Gender:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic3}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Homeworld:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic4}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+
+            <DataTemplate x:Key="FilmTemplate"
+                          x:DataType="model:Generic" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Title:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic1}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Film Episode:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic2}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Opening Crawl:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic3}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Director:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic4}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Producer:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic5}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+
+            <DataTemplate x:Key="SpeciesTemplate"
+                          x:DataType="model:Generic" >
+                <Frame Style="{StaticResource DealerCard}">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Species Name:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic1}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Species Classification:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic2}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Species Designation:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic3}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <!--<StackLayout Orientation="Horizontal">
+                            <Label Text="Average Lifespan:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic4}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>-->
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Primary Language:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic5}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Homeworld:" 
+                               Style="{DynamicResource LabelSmall}" />
+                            <Label Text="{Binding Generic6}"
+                              Style="{DynamicResource LabelSmall}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+            <local:StarWarsTemplateSelector x:Key="SWTemplateSelector"
+                 VehicleTemplate="{StaticResource VehicleTemplate}"
+                 PlanetTemplate="{StaticResource PlanetTemplate}"
+                 SpeciesTemplate="{StaticResource SpeciesTemplate}"
+                 FilmTemplate="{StaticResource FilmTemplate}"
+                 PeopleTemplate="{StaticResource PeopleTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+       
+            <!--<RefreshView IsRefreshing="{Binding IsBusy,Mode=OneWay}"
+                         Command="{Binding RefreshCommand}">-->
+                <CollectionView
+                x:Name="collectionView"
+                SelectionMode="None"
+                ItemTemplate="{StaticResource SWTemplateSelector}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                        Span="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.EmptyView>
+                        <StackLayout>
+                            <Label HorizontalOptions="Center" Text="Select data to load!" />
+                        </StackLayout>
+                    </CollectionView.EmptyView>
+            <CollectionView.Header>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Starships" Clicked="Starships_Clicked" Style="{StaticResource ButtonOutline}" />
+                    <Button Text="Planets" Style="{StaticResource ButtonOutline}" Clicked="Planets_Clicked"/>
+                    <Button Text="People" Style="{StaticResource ButtonOutline}" Clicked="People_Clicked"/>
+                    <Button Text="Vehicles" Style="{StaticResource ButtonOutline}" Clicked="Vehicles_Clicked"/>
+                    <Button Text="Species" Style="{StaticResource ButtonOutline}" Clicked="Species_Clicked"/>
+                    <Button Text="Films" Style="{StaticResource ButtonOutline}" Clicked="Films_Clicked"/>
+                    </StackLayout>
+            </CollectionView.Header>
+            <CollectionView.Footer>
+                <Grid>
+
+                </Grid>
+            </CollectionView.Footer>
+
+            <!--</RefreshView>-->
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

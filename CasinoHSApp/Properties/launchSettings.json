@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CasinoHSApp": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

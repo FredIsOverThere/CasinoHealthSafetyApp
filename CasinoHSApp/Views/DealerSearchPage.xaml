@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:CasinoHSApp.ViewModels" xmlns:xct="http://xamarin.com/schemas/2020/toolkit" x:DataType="viewmodels:DealerDisplayViewModel"
+             x:Class="CasinoHSApp.Views.DealerSearchPage"
+             >
+    <ContentPage.BindingContext>
+        <viewmodels:DealerDisplayViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+
+            <Label Text="Casino Health and Safety Application" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+            <Label Text="Search for a dealer by ID or Name" FontSize="Subtitle" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+
+                <Picker Title="Name or ID"
+                        ItemsSource="{Binding SearchPickers}"
+                        ItemDisplayBinding="{Binding SearchCriteria}"
+                        SelectedItem="{Binding SelectedCriteria}"/>
+
+
+                <Entry x:Name="SearchInput" BackgroundColor="LightGray" Text="{Binding SearchInput}">
+                </Entry>
+                
+                
+                <Picker Title="Team"
+                        ItemsSource="{Binding TeamPickers}"
+                        ItemDisplayBinding="{Binding Team}" 
+                        SelectedItem="{Binding SelectedTeam}"/>
+                
+                
+                <!--<Picker x:Name="TypeSelect" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" 
+                                 SelectedIndexChanged="Picker_SelectedIndexChanged" MinimumWidthRequest="1000"
+                                 Title="Name or ID" SelectedItem="{Binding Answer, Mode=TwoWay}">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Staff ID</x:String>
+                                <x:String>First Name</x:String>
+                                <x:String>Last Name</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                </Picker>
+                <Editor x:Name="SearchInput" BackgroundColor="LightGray" AutoSize="TextChanges" TextChanged="TextChangedEventHandler"/>
+                <Picker x:Name="TeamSelect" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" 
+                                 SelectedIndexChanged="Picker_SelectedIndexChanged" MinimumWidthRequest="1000"
+                                 Title="Team" SelectedItem="{Binding Answer, Mode=TwoWay}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Main</x:String>
+                            <x:String>Premium</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>-->
+            </StackLayout>
+            <Button Text="Search">
+                <Button.Behaviors>
+                    <xct:EventToCommandBehavior
+                        EventName="Clicked"
+                        Command="{Binding SearchSubmitCommand}"/>
+                </Button.Behaviors>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

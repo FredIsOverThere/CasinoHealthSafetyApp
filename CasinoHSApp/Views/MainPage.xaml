@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CasinoHSApp.Views.MainPage"
+             			BackgroundColor="{AppThemeBinding 
+                        Dark={StaticResource WindowBackgroundColorDark}, 
+                        Light={StaticResource WindowBackgroundColor}}"
+             >
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+        <Label
+                Text="Casino Health and Safety Checklist Application"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Style="{StaticResource LabelTitle}"
+                />
+        <Label Padding="40" />
+        <Button
+                Text="All Dealers"
+            Clicked="Button_Clicked_CP"
+            BackgroundColor="{AppThemeBinding Dark={StaticResource RealDarkBlue}, Light= {StaticResource RealLightBlue}}"
+            Style="{StaticResource ButtonOutline}"
+                />
+        <Button
+                Text="Search"
+            Clicked="Button_Clicked_SP"
+            BackgroundColor="{AppThemeBinding Dark={StaticResource RealDarkBlue}, Light= {StaticResource RealLightBlue}}"
+            Style="{StaticResource ButtonOutline}"
+                />
+        <!--<Button
+                Text="A bit of fun!"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource RealDarkBlue}, Light= {StaticResource RealLightBlue}}"
+            Style="{StaticResource ButtonOutline}"
+            Clicked="Button_Clicked_DS"
+                />-->
+        <Button
+                Text="Settings"
+                BackgroundColor="{AppThemeBinding Dark={StaticResource RealDarkBlue}, Light= {StaticResource RealLightBlue}}"
+            Style="{StaticResource ButtonOutline}"
+            Clicked="Button_Clicked_IC"
+                />
+    </StackLayout>
+</ContentPage>

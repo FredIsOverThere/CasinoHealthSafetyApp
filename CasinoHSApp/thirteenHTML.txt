@@ -1,0 +1,107 @@
+<html> 
+<body>
+  <img src="https://media.discordapp.net/attachments/740368945466310736/925947927954882580/264973486_679935953385366_444115336260667617_n.png" />
+  <h1>Emmah Assessment</h1>
+  <table>
+    <tr>
+      <td style="color: Black; text-align:right; border-collapse: collapse;"><b>Staff ID:</b></td>
+      <td style="color: Black; text-align:center; border-collapse: collapse;">StaffIDHere</td>
+	<td></td>
+      <td style="color: Black; text-align:right; border-collapse: collapse;"><b>Name:</b></td>
+      <td style="color: Black; text-align:right; border-collapse: collapse;">FirstNameHere</td>
+      <td style="color: Black; text-align:left; border-collapse: collapse;">LastNameHere</td>
+    </tr> 
+    <tr>
+      <td style="color: Black; text-align:right; border-collapse: collapse;"><b>Game Assessed On:</b></td>
+      <td style="color: Black;text-align:Left; border-collapse: collapse;">GameNameHere</td>
+	<td></td>
+      <td style="color: Black; text-align:right; border-collapse: collapse;"><b>Completed By:</b></td>
+      <td style="color: Black;text-align:left; border-collapse: collapse;">HereAStaffID</td>
+      <td style="color: Black;text-align:right; border-collapse: collapse;">HereAFirstName</td>
+      <td style="color: Black;text-align:left; border-collapse: collapse;">HereALastName</td>
+    </tr> 
+    <tr>
+      <td style="color: Black; text-align:right; border-collapse: collapse;"><b>Date Completed:</b></td>
+      <td style="color: Black; text-align:center; border-collapse: collapse;">DateCompletedHere</td>
+	<td></td>
+      <td style="color: Black; text-align:right; border-collapse: collapse;"><b>Date of next Assessment Due:</b></td>
+      <td colspan = "2" style="color: Black; text-align:center; border-collapse: collapse; ">DateReassessHere</td>
+    </tr>
+</table>
+
+<table>
+	<tr>
+		<th style="text-align:left; border-collapse: collapse;"><b>Non-Dealing/Between Hands</b></th>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionA</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerA</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionB</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerB</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionC</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerC</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<th style="text-align:left; border-collapse: collapse;"><b>Key areas of concern that may cause Injury</b></th>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionD</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerD</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionE</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerE</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionF</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerF</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionG</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerG</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionH</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerH</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionI</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerI</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionJ</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerJ</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionK</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerK</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionL</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerL</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:left; border-collapse: collapse;">QuestionM</td>
+		<td style="color: Black; text-align:center; border-collapse: collapse;">AnswerM</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:center; border-collapse: collapse;"><b>QuestionN</b></td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:justify; border-collapse: collapse;">AnswerN</td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:center; border-collapse: collapse;"><b>QuestionO</b></td>
+	</tr>
+	<tr>
+		<td style="color: Black; text-align:justify; border-collapse: collapse;">AnswerO</td>
+	</tr>
+  </table>
+</body>
+</html>
